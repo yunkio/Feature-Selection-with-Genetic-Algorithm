@@ -7,7 +7,7 @@
 
 변수 선택에서는, 이러한 유전 알고리즘의 특징을 활용하여 결과에 유의미한 영향을 끼치는 변수를 선택하여 데이터의 차원을 줄이는 것을 목적으로 합니다.
 
-![image](https://user-images.githubusercontent.com/35906602/195421636-5fbd2035-6fd1-40e5-998b-59c2b4b0a06f.png)
+![image](https://user-images.githubusercontent.com/35906602/195434721-17c8d056-b788-4c6e-9f9d-0e3d1245ae9a.png)
 
 변수 추출 알고리즘
 
@@ -31,7 +31,15 @@ mutation_rate=0.03, elitism=1, metric='adjusted_r_squared',
 early_stopping=50, max_generation=1000)
 ```
 
-### 하이퍼 파라미터
+### 입력
+
+**X : *array***
+
+설명 변수입니다. array 형태로 입력하게 됩니다.
+
+**y : *list or array***
+
+목표 변수입니다.
 
 **popluation_size : *int, default = 32*** 
 
@@ -65,5 +73,17 @@ early_stopping=50, max_generation=1000)
 
 최대 세대 수입니다. 최대 세대에 도달하면 멈추게 됩니다.
 
+### 출력
+
+**history : *list***
+
+각 세대 별 최고 점수로 구성된 리스트입니다.
+
+**elite_history : *list***
+
+각 세대 별 최고 점수를 보인 염색체들로 구성된 리스트입니다.
+
 
 코드에 대한 자세한 설명은 Tutorial.ipynb 파일을 참고해주세요.
+
+![image](https://user-images.githubusercontent.com/35906602/195432094-a174c2cf-f7bd-4f48-acb0-ef54e3664056.png)

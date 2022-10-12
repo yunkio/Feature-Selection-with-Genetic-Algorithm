@@ -94,13 +94,11 @@ def evaluate_chromosome(score_list, chromosome_list, elitism = 1, metric='adjust
         seq = sorted(score_list) # rmse
         score_for_weight = max(score_list) - score_list # rmse
     rank = [seq.index(v) for v in score_list]
-    print(rank)
     sum_score = sum(score_for_weight)
     weight = [(score / sum_score) for score in score_for_weight]
     feature_num = [sum(i) for i in chromosome_list]
     eval_result = pd.DataFrame([score_list, rank, weight, feature_num]).T
     eval_result.columns = ['score', 'rank', 'weight', 'feature_num']
-    print(eval_result['rank'])
     eval_result['rank'] = eval_result.loc[:, ['rank']].astype('int')
     eval_result['feature_num'] = eval_result.loc[:, ['feature_num']].astype('int')
     
